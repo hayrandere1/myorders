@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+    #PHP Service
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: myorders_app
+#        restart: unless-stopped
+#        tty: true
+        volumes:
+            - ./:/var/www/myorders
+        ports:
+            - "80:80"
+        working_dir: /var/www/myorders
+#        networks:
+#            - app-network
+        links:
+            -   mysql
+    mysql:
+        image: mariadb/server:latest
+        container_name: myorders_db
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: myorders
+            MYSQL_ROOT_PASSWORD: 123456
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+#networks:
+#    app-network:
+#        driver: bridge
+#

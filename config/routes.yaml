@@ -1,3 +1,71 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+api_login_check:
+  path: /api/login_check
+
+category_index:
+  path: /api/category
+  controller: App\Controller\CategoryController::index
+  methods: GET
+
+category_store:
+  path: /api/category
+  controller: App\Controller\CategoryController::store
+  methods: POST
+
+category_update:
+  path: /api/category/{id}
+  controller: App\Controller\CategoryController::update
+  methods: PUT
+
+product_index:
+  path: /api/product
+  controller: App\Controller\ProductController::index
+  methods: GET
+
+product_store:
+  path: /api/product
+  controller: App\Controller\ProductController::store
+  methods: POST
+
+product_update:
+  path: /api/product/{id}
+  controller: App\Controller\ProductController::update
+  methods: PUT
+
+order_index:
+  path: /api/order
+  controller: App\Controller\OrderController::index
+  methods: GET
+
+order_store:
+  path: /api/order
+  controller: App\Controller\OrderController::store
+  methods: POST
+
+order_update:
+  path: /api/order/{id}
+  controller: App\Controller\OrderController::update
+  methods: PUT
+
+stock_status_index:
+  path: /api/stock_status
+  controller: App\Controller\StockStatusController::index
+  methods: GET
+
+stock_movement_index:
+  path: /api/stock_movement
+  controller: App\Controller\StockMovementController::index
+  methods: GET
+
+stock_movement_store:
+  path: /api/stock_movement
+  controller: App\Controller\StockMovementController::store
+  methods: POST
+
+stock_movement_destroy:
+  path: /api/stock_movement/{id}
+  controller: App\Controller\StockMovementController::destroy
+  methods: DELETE
